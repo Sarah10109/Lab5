@@ -2,8 +2,8 @@
 =========================================================
 Name        : lab5_exe_C.html
 Assignment  : Lab 5, Exercise C
-Author(s)   : Mahdi Ansari, William Arthur Philip Louis
-Submission  : May 21, 2030
+Author(s)   : Suprova Hoque, Sarah Elmahdy
+Submission  : February 12, 2024
 Description : DOM Elements.
 =========================================================
 -->
@@ -190,7 +190,8 @@ Description : DOM Elements.
 					developers are the agile architects of the web, capable of building
 					dynamic and responsive websites, applications, and systems that drive
 					modern digital experiences.
-				</p>				
+				</p>	
+				
 			</article>
             <aside>
                 <h3>Related Links</h3>
@@ -206,33 +207,73 @@ Description : DOM Elements.
 		<script>
 			document.addEventListener('DOMContentLoaded', function afterRender() {
 				// Task 1: Set the text content of all elements with the class 'companyName' and remove their border
-
+				var element = document.getElementsByClassName('companyName');
+				for (let j = 0; j < element.length; j++){
+					element[j].textContent = "Suprova";
+					element[j].style.border="0px";
+				}
 
 				// Task 2: Change the background color of the navigation bar
-				
+				document.querySelector('nav').style.backgroundColor = 'violet';
 
 				// Task 3: Hide the section titled 'What is full-stack?'
-
+				document.querySelector('article p').style.display = "none";
 
 				// Task 4: Create a new <p> element and append it to the 'About Us' section
 
+				new_element = document.createElement('p');
+				new_element.style.color = "red";
+				new_element.textContent = "This is a new paragraph"
+				console.log(new_element);
+
+				let item = document.querySelectorAll('section p');
+				for (var i = 0; i < item.length; i++) {
+				item[i].appendChild(new_element)};
+
 
 				// Task 5: Add placeholders to input elements based on their corresponding label IDs
+				let inputName = document.getElementById("name");
+				inputName.placeholder="Name";
+				let inputEmail = document.getElementById("email");
+				inputEmail.placeholder="Email";
+				let inputMessage = document.getElementById("message");
+				inputMessage.placeholder="Message";
 
 
 				// Task 6: Set the src attribute of the image
+				image = document.getElementsByTagName('img');
+				image[0].src="./images/example.svg";
 
 
 				// Task 7: Add a new item in the navigation menu
+				let blogItem = document.createElement('li');
+				let bloglink = document.createElement('a');
+				let bloglink_text = document.createTextNode("Blog");
+				bloglink.appendChild(bloglink_text);
+				bloglink.href="#";
+				blogItem.appendChild(bloglink);
 
+				document.querySelector('nav ul').appendChild(blogItem);
 
 				// Task 8: Change the submit button text upon clicking and make it disabled
+				button = document.querySelector('form input[type="button"]');
+				button.onclick=changeLooks;
+				console.log(button);
 
+				function changeLooks(){
+					button.value="Submitted";
+					button.disabled = true;
+				}
 
 				// Task 9: Change the text color of each item in the 'Related Links' to green
+				const links = document.querySelectorAll('aside a');
+				for (var i = 0; i < links.length; i++) {
+					links[i].style.color ="green"};
 
 
 				// Task 10: Add a red solid border to the footer
+				document.querySelector('footer').style.border = "2px solid red";
+
 			});
 		</script>
 	</body>
