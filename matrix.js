@@ -51,17 +51,19 @@ const showResult = (title, containerId, rows, cols, dataArray) => {
 };
 
 const showResult2D = (title, containerId, dataArray) => {
-    if (typeof result == "string"){
-        let errorContainer = document.getElementById('error-container');
-        if (!errorContainer) {
-            errorContainer = document.createElement('div');
-            errorContainer.id = 'error-container';
-            errorContainer.style.color = 'red';
-            errorContainer.style.padding = '5px';
-            document.body.appendChild(errorContainer);
-        }
+    
+    let errorContainer = document.getElementById('error-container');
+    if (!errorContainer) {
+        errorContainer = document.createElement('div');
+        errorContainer.id = 'error-container';
+        errorContainer.style.color = 'red';
+        errorContainer.style.padding = '5px';
+        document.body.appendChild(errorContainer);
+    }
+        errorContainer.textContent = "";
+    if (typeof result == "string"){    
         errorContainer.textContent = result;
-        return
+        return;
     }
     let container = document.getElementById(containerId);
     container.innerHTML = ''; 
