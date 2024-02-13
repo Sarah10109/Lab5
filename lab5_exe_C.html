@@ -224,7 +224,7 @@ Description : DOM Elements.
 				new_element = document.createElement('p');
 				new_element.style.color = "red";
 				new_element.textContent = "This is a new paragraph"
-				console.log(new_element);
+				
 
 				let item = document.querySelectorAll('section p');
 				for (var i = 0; i < item.length; i++) {
@@ -258,8 +258,7 @@ Description : DOM Elements.
 				// Task 8: Change the submit button text upon clicking and make it disabled
 				button = document.querySelector('form input[type="button"]');
 				button.onclick=changeLooks;
-				console.log(button);
-
+				
 				function changeLooks(){
 					button.value="Submitted";
 					button.disabled = true;
