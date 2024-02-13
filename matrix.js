@@ -1,3 +1,13 @@
+/*
+=========================================================
+Name        : matrix.js
+Assignment  : Lab 5, Exercise D
+Author(s)   : Sarah Elmahdy, Suprova Hoque
+Submission  : Feb 12, 2024
+Description : JavaScript Arrays and Functions
+=========================================================
+*/
+
 function generateMatrices() {
     createMatrix('The 1st Matrix', 'matrix1', document.getElementById('matrix1Rows').value, document.getElementById('matrix1Cols').value);
     createMatrix('The 2nd Matrix','matrix2', document.getElementById('matrix2Rows').value, document.getElementById('matrix2Cols').value);
